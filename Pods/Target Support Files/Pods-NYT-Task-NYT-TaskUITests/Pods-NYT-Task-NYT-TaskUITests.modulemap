@@ -1,0 +1,6 @@
+framework module Pods_NYT_Task_NYT_TaskUITests {
+  umbrella header "Pods-NYT-Task-NYT-TaskUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
