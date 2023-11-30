@@ -6,14 +6,8 @@ target 'NYT-Task' do
   use_frameworks!
 
   # Pods for NYT-Task
-<<<<<<< Updated upstream
-    pod 'Moya', '~> 12.0'
-    pod 'Kingfisher', '~> 5.0'
-    pod 'SVProgressHUD', '~> 2.2.5'
-=======
   pod 'Alamofire'
   pod 'SwiftyProgressHud'
->>>>>>> Stashed changes
 
   target 'NYT-TaskTests' do
     inherit! :search_paths
