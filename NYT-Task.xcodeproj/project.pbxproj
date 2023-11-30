@@ -10,18 +10,12 @@
 		446A4165FE11858818E1614C /* Pods_NYT_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D80D8093BF92331A6C71B6 /* Pods_NYT_Task.framework */; };
 		A1E36D022B1768B0003F46F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D012B1768B0003F46F0 /* AppDelegate.swift */; };
 		A1E36D042B1768B0003F46F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D032B1768B0003F46F0 /* SceneDelegate.swift */; };
-<<<<<<< Updated upstream
-		A1E36D062B1768B0003F46F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D052B1768B0003F46F0 /* ViewController.swift */; };
-=======
->>>>>>> Stashed changes
 		A1E36D092B1768B0003F46F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E36D072B1768B0003F46F0 /* Main.storyboard */; };
 		A1E36D0B2B1768B4003F46F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1E36D0A2B1768B4003F46F0 /* Assets.xcassets */; };
 		A1E36D0E2B1768B4003F46F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E36D0C2B1768B4003F46F0 /* LaunchScreen.storyboard */; };
 		A1E36D192B1768B4003F46F0 /* NYT_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D182B1768B4003F46F0 /* NYT_TaskTests.swift */; };
 		A1E36D232B1768B4003F46F0 /* NYT_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D222B1768B4003F46F0 /* NYT_TaskUITests.swift */; };
 		A1E36D252B1768B4003F46F0 /* NYT_TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D242B1768B4003F46F0 /* NYT_TaskUITestsLaunchTests.swift */; };
-<<<<<<< Updated upstream
-=======
 		A1E36D3E2B17C28F003F46F0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D3D2B17C28F003F46F0 /* Utilities.swift */; };
 		A1E36D432B17C2AC003F46F0 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D402B17C2AC003F46F0 /* NSObject.swift */; };
 		A1E36D442B17C2AC003F46F0 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D412B17C2AC003F46F0 /* UITableViewCell.swift */; };
@@ -38,7 +32,6 @@
 		A1E36D5D2B17C9FB003F46F0 /* NYModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D592B17C9FB003F46F0 /* NYModel.swift */; };
 		A1E36D5E2B17C9FB003F46F0 /* NewsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D5A2B17C9FB003F46F0 /* NewsArray.swift */; };
 		A1E36D5F2B17C9FB003F46F0 /* NYMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D5B2B17C9FB003F46F0 /* NYMedia.swift */; };
->>>>>>> Stashed changes
 		A2790812F9F4281C437E5F06 /* Pods_NYT_TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEB2B1AB583555A0973232F /* Pods_NYT_TaskTests.framework */; };
 		B386A403C9650F9D5650F7AA /* Pods_NYT_Task_NYT_TaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D82BAA36E13887F0AB6B /* Pods_NYT_Task_NYT_TaskUITests.framework */; };
 /* End PBXBuildFile section */
@@ -71,10 +64,6 @@
 		A1E36CFE2B1768B0003F46F0 /* NYT-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYT-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E36D012B1768B0003F46F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1E36D032B1768B0003F46F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
-		A1E36D052B1768B0003F46F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-=======
->>>>>>> Stashed changes
 		A1E36D082B1768B0003F46F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1E36D0A2B1768B4003F46F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1E36D0D2B1768B4003F46F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,8 +73,6 @@
 		A1E36D1E2B1768B4003F46F0 /* NYT-TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NYT-TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E36D222B1768B4003F46F0 /* NYT_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYT_TaskUITests.swift; sourceTree = "<group>"; };
 		A1E36D242B1768B4003F46F0 /* NYT_TaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYT_TaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
-=======
 		A1E36D3D2B17C28F003F46F0 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		A1E36D402B17C2AC003F46F0 /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		A1E36D412B17C2AC003F46F0 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
@@ -102,7 +89,6 @@
 		A1E36D592B17C9FB003F46F0 /* NYModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYModel.swift; sourceTree = "<group>"; };
 		A1E36D5A2B17C9FB003F46F0 /* NewsArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsArray.swift; sourceTree = "<group>"; };
 		A1E36D5B2B17C9FB003F46F0 /* NYMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYMedia.swift; sourceTree = "<group>"; };
->>>>>>> Stashed changes
 		ACEB2B1AB583555A0973232F /* Pods_NYT_TaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYT_TaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B5708C9D75F91CA8A9F76C /* Pods-NYT-Task-NYT-TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYT-Task-NYT-TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-NYT-Task-NYT-TaskUITests/Pods-NYT-Task-NYT-TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,10 +131,7 @@
 				591F5507F5DCD03A5703E1F4 /* Pods-NYT-TaskTests.debug.xcconfig */,
 				46D7ADB8ABA65DFDCF13B1C4 /* Pods-NYT-TaskTests.release.xcconfig */,
 			);
-<<<<<<< Updated upstream
 			name = Pods;
-=======
->>>>>>> Stashed changes
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -177,22 +160,12 @@
 		A1E36D002B1768B0003F46F0 /* NYT-Task */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< Updated upstream
-				A1E36D012B1768B0003F46F0 /* AppDelegate.swift */,
-				A1E36D032B1768B0003F46F0 /* SceneDelegate.swift */,
-				A1E36D052B1768B0003F46F0 /* ViewController.swift */,
-				A1E36D072B1768B0003F46F0 /* Main.storyboard */,
-				A1E36D0A2B1768B4003F46F0 /* Assets.xcassets */,
-				A1E36D0C2B1768B4003F46F0 /* LaunchScreen.storyboard */,
-				A1E36D0F2B1768B4003F46F0 /* Info.plist */,
-=======
 				A1E36D3B2B17C202003F46F0 /* Application */,
 				A1E36D392B17C1DC003F46F0 /* Views */,
 				A1E36D3A2B17C1F3003F46F0 /* Model */,
 				A1E36D382B17C112003F46F0 /* ViewModel */,
 				A1E36D312B17948F003F46F0 /* Network-Layer */,
 				A1E36D3C2B17C20B003F46F0 /* Extra */,
->>>>>>> Stashed changes
 			);
 			path = "NYT-Task";
 			sourceTree = "<group>";
@@ -214,8 +187,6 @@
 			path = "NYT-TaskUITests";
 			sourceTree = "<group>";
 		};
-<<<<<<< Updated upstream
-=======
 		A1E36D312B17948F003F46F0 /* Network-Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,7 +275,6 @@
 			path = "api-calling";
 			sourceTree = "<group>";
 		};
->>>>>>> Stashed changes
 		B5571EB48EEA096AE972720A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,11 +296,7 @@
 				A1E36CFA2B1768B0003F46F0 /* Sources */,
 				A1E36CFB2B1768B0003F46F0 /* Frameworks */,
 				A1E36CFC2B1768B0003F46F0 /* Resources */,
-<<<<<<< Updated upstream
-				3667F4D15C8E23086150058D /* [CP] Embed Pods Frameworks */,
-=======
 				F6E35A0A2ABF1CB962E5C729 /* [CP] Embed Pods Frameworks */,
->>>>>>> Stashed changes
 			);
 			buildRules = (
 			);
@@ -368,11 +334,7 @@
 				A1E36D1A2B1768B4003F46F0 /* Sources */,
 				A1E36D1B2B1768B4003F46F0 /* Frameworks */,
 				A1E36D1C2B1768B4003F46F0 /* Resources */,
-<<<<<<< Updated upstream
-				0B9CE2BB00E72A33C89BDA07 /* [CP] Embed Pods Frameworks */,
-=======
 				5A1A1E5B08BD5F245442DB96 /* [CP] Embed Pods Frameworks */,
->>>>>>> Stashed changes
 			);
 			buildRules = (
 			);
@@ -435,10 +397,7 @@
 				A1E36D0E2B1768B4003F46F0 /* LaunchScreen.storyboard in Resources */,
 				A1E36D0B2B1768B4003F46F0 /* Assets.xcassets in Resources */,
 				A1E36D092B1768B0003F46F0 /* Main.storyboard in Resources */,
-<<<<<<< Updated upstream
-=======
 				A1E36D532B17C33F003F46F0 /* NYTableCell.xib in Resources */,
->>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,8 +453,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYT-Task/Pods-NYT-Task-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-=======
->>>>>>> Stashed changes
 		37ED23B7516C79AD5D18EA57 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -540,8 +497,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-<<<<<<< Updated upstream
-=======
 		5A1A1E5B08BD5F245442DB96 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -559,7 +514,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYT-Task-NYT-TaskUITests/Pods-NYT-Task-NYT-TaskUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
->>>>>>> Stashed changes
 		AAEEFBC7277330A78E4EAF3C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,8 +536,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-<<<<<<< Updated upstream
-=======
 		F6E35A0A2ABF1CB962E5C729 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -601,7 +553,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYT-Task/Pods-NYT-Task-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
->>>>>>> Stashed changes
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -609,11 +560,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< Updated upstream
 				A1E36D062B1768B0003F46F0 /* ViewController.swift in Sources */,
 				A1E36D022B1768B0003F46F0 /* AppDelegate.swift in Sources */,
 				A1E36D042B1768B0003F46F0 /* SceneDelegate.swift in Sources */,
-=======
 				A1E36D542B17C33F003F46F0 /* NYDetailViewController.swift in Sources */,
 				A1E36D442B17C2AC003F46F0 /* UITableViewCell.swift in Sources */,
 				A1E36D5C2B17C9FB003F46F0 /* NYImage.swift in Sources */,
@@ -631,7 +580,6 @@
 				A1E36D572B17C9D9003F46F0 /* NYViewModel.swift in Sources */,
 				A1E36D3E2B17C28F003F46F0 /* Utilities.swift in Sources */,
 				A1E36D4D2B17C320003F46F0 /* MPNewsAPI.swift in Sources */,
->>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,29 +760,17 @@
 				DEVELOPMENT_TEAM = 774M676ZQ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NYT-Task/Info.plist";
-<<<<<<< Updated upstream
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-=======
 				INFOPLIST_KEY_CFBundleDisplayName = "NYT-Task";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
->>>>>>> Stashed changes
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-<<<<<<< Updated upstream
-				PRODUCT_BUNDLE_IDENTIFIER = "InnovativeSolution.NYT-Task";
-=======
 				PRODUCT_BUNDLE_IDENTIFIER = "DemoTask.NYT-Task";
->>>>>>> Stashed changes
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -853,29 +789,17 @@
 				DEVELOPMENT_TEAM = 774M676ZQ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NYT-Task/Info.plist";
-<<<<<<< Updated upstream
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-=======
 				INFOPLIST_KEY_CFBundleDisplayName = "NYT-Task";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
->>>>>>> Stashed changes
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-<<<<<<< Updated upstream
-				PRODUCT_BUNDLE_IDENTIFIER = "InnovativeSolution.NYT-Task";
-=======
 				PRODUCT_BUNDLE_IDENTIFIER = "DemoTask.NYT-Task";
->>>>>>> Stashed changes
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
