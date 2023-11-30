@@ -1,11 +1,7 @@
 //
 //  Notifications.swift
 //
-<<<<<<< Updated upstream
-//  Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
-=======
 //  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
->>>>>>> Stashed changes
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -28,23 +24,6 @@
 
 import Foundation
 
-<<<<<<< Updated upstream
-extension Notification.Name {
-    /// Used as a namespace for all `URLSessionTask` related notifications.
-    public struct Task {
-        /// Posted when a `URLSessionTask` is resumed. The notification `object` contains the resumed `URLSessionTask`.
-        public static let DidResume = Notification.Name(rawValue: "org.alamofire.notification.name.task.didResume")
-
-        /// Posted when a `URLSessionTask` is suspended. The notification `object` contains the suspended `URLSessionTask`.
-        public static let DidSuspend = Notification.Name(rawValue: "org.alamofire.notification.name.task.didSuspend")
-
-        /// Posted when a `URLSessionTask` is cancelled. The notification `object` contains the cancelled `URLSessionTask`.
-        public static let DidCancel = Notification.Name(rawValue: "org.alamofire.notification.name.task.didCancel")
-
-        /// Posted when a `URLSessionTask` is completed. The notification `object` contains the completed `URLSessionTask`.
-        public static let DidComplete = Notification.Name(rawValue: "org.alamofire.notification.name.task.didComplete")
-    }
-=======
 extension Request {
     /// Posted when a `Request` is resumed. The `Notification` contains the resumed `Request`.
     public static let didResumeNotification = Notification.Name(rawValue: "org.alamofire.notification.name.request.didResume")
@@ -63,21 +42,11 @@ extension Request {
     public static let didCancelTaskNotification = Notification.Name(rawValue: "org.alamofire.notification.name.request.didCancelTask")
     /// Posted when a `URLSessionTask` is completed. The `Notification` contains the `Request` associated with the `URLSessionTask`.
     public static let didCompleteTaskNotification = Notification.Name(rawValue: "org.alamofire.notification.name.request.didCompleteTask")
->>>>>>> Stashed changes
 }
 
 // MARK: -
 
 extension Notification {
-<<<<<<< Updated upstream
-    /// Used as a namespace for all `Notification` user info dictionary keys.
-    public struct Key {
-        /// User info dictionary key representing the `URLSessionTask` associated with the notification.
-        public static let Task = "org.alamofire.notification.key.task"
-
-        /// User info dictionary key representing the responseData associated with the notification.
-        public static let ResponseData = "org.alamofire.notification.key.responseData"
-=======
     /// The `Request` contained by the instance's `userInfo`, `nil` otherwise.
     public var request: Request? {
         userInfo?[String.requestKey] as? Request
@@ -142,6 +111,5 @@ public final class AlamofireNotifications: EventMonitor {
 
     public func request(_ request: Request, didCompleteTask task: URLSessionTask, with error: AFError?) {
         NotificationCenter.default.postNotification(named: Request.didCompleteTaskNotification, with: request)
->>>>>>> Stashed changes
     }
 }

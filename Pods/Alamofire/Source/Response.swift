@@ -1,11 +1,7 @@
 //
 //  Response.swift
 //
-<<<<<<< Updated upstream
-//  Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
-=======
 //  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
->>>>>>> Stashed changes
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -28,10 +24,6 @@
 
 import Foundation
 
-<<<<<<< Updated upstream
-/// Used to store all data associated with an non-serialized response of a data or upload request.
-public struct DefaultDataResponse {
-=======
 /// Default type of `DataResponse` returned by Alamofire, with an `AFError` `Failure` type.
 public typealias AFDataResponse<Success> = DataResponse<Success, AFError>
 /// Default type of `DownloadResponse` returned by Alamofire, with an `AFError` `Failure` type.
@@ -39,7 +31,6 @@ public typealias AFDownloadResponse<Success> = DownloadResponse<Success, AFError
 
 /// Type used to store all values associated with a serialized response of a `DataRequest` or `UploadRequest`.
 public struct DataResponse<Success, Failure: Error> {
->>>>>>> Stashed changes
     /// The URL request sent to the server.
     public let request: URLRequest?
 
@@ -49,89 +40,6 @@ public struct DataResponse<Success, Failure: Error> {
     /// The data returned by the server.
     public let data: Data?
 
-<<<<<<< Updated upstream
-    /// The error encountered while executing or validating the request.
-    public let error: Error?
-
-    /// The timeline of the complete lifecycle of the request.
-    public let timeline: Timeline
-
-    var _metrics: AnyObject?
-
-    /// Creates a `DefaultDataResponse` instance from the specified parameters.
-    ///
-    /// - Parameters:
-    ///   - request:  The URL request sent to the server.
-    ///   - response: The server's response to the URL request.
-    ///   - data:     The data returned by the server.
-    ///   - error:    The error encountered while executing or validating the request.
-    ///   - timeline: The timeline of the complete lifecycle of the request. `Timeline()` by default.
-    ///   - metrics:  The task metrics containing the request / response statistics. `nil` by default.
-    public init(
-        request: URLRequest?,
-        response: HTTPURLResponse?,
-        data: Data?,
-        error: Error?,
-        timeline: Timeline = Timeline(),
-        metrics: AnyObject? = nil)
-    {
-        self.request = request
-        self.response = response
-        self.data = data
-        self.error = error
-        self.timeline = timeline
-    }
-}
-
-// MARK: -
-
-/// Used to store all data associated with a serialized response of a data or upload request.
-public struct DataResponse<Value> {
-    /// The URL request sent to the server.
-    public let request: URLRequest?
-
-    /// The server's response to the URL request.
-    public let response: HTTPURLResponse?
-
-    /// The data returned by the server.
-    public let data: Data?
-
-    /// The result of response serialization.
-    public let result: Result<Value>
-
-    /// The timeline of the complete lifecycle of the request.
-    public let timeline: Timeline
-
-    /// Returns the associated value of the result if it is a success, `nil` otherwise.
-    public var value: Value? { return result.value }
-
-    /// Returns the associated error value if the result if it is a failure, `nil` otherwise.
-    public var error: Error? { return result.error }
-
-    var _metrics: AnyObject?
-
-    /// Creates a `DataResponse` instance with the specified parameters derived from response serialization.
-    ///
-    /// - parameter request:  The URL request sent to the server.
-    /// - parameter response: The server's response to the URL request.
-    /// - parameter data:     The data returned by the server.
-    /// - parameter result:   The result of response serialization.
-    /// - parameter timeline: The timeline of the complete lifecycle of the `Request`. Defaults to `Timeline()`.
-    ///
-    /// - returns: The new `DataResponse` instance.
-    public init(
-        request: URLRequest?,
-        response: HTTPURLResponse?,
-        data: Data?,
-        result: Result<Value>,
-        timeline: Timeline = Timeline())
-    {
-        self.request = request
-        self.response = response
-        self.data = data
-        self.result = result
-        self.timeline = timeline
-=======
     /// The final metrics of the response.
     ///
     /// - Note: Due to `FB7624529`, collection of `URLSessionTaskMetrics` on watchOS is currently disabled.`
@@ -171,7 +79,6 @@ public struct DataResponse<Value> {
         self.metrics = metrics
         self.serializationDuration = serializationDuration
         self.result = result
->>>>>>> Stashed changes
     }
 }
 
@@ -181,26 +88,6 @@ extension DataResponse: CustomStringConvertible, CustomDebugStringConvertible {
     /// The textual representation used when written to an output stream, which includes whether the result was a
     /// success or failure.
     public var description: String {
-<<<<<<< Updated upstream
-        return result.debugDescription
-    }
-
-    /// The debug textual representation used when written to an output stream, which includes the URL request, the URL
-    /// response, the server data, the response serialization result and the timeline.
-    public var debugDescription: String {
-        let requestDescription = request.map { "\($0.httpMethod ?? "GET") \($0)"} ?? "nil"
-        let requestBody = request?.httpBody.map { String(decoding: $0, as: UTF8.self) } ?? "None"
-        let responseDescription = response.map { "\($0)" } ?? "nil"
-        let responseBody = data.map { String(decoding: $0, as: UTF8.self) } ?? "None"
-
-        return """
-        [Request]: \(requestDescription)
-        [Request Body]: \n\(requestBody)
-        [Response]: \(responseDescription)
-        [Response Body]: \n\(responseBody)
-        [Result]: \(result)
-        [Timeline]: \(timeline.debugDescription)
-=======
         "\(result)"
     }
 
@@ -230,7 +117,6 @@ extension DataResponse: CustomStringConvertible, CustomDebugStringConvertible {
         [Network Duration]: \(networkDuration)
         [Serialization Duration]: \(serializationDuration)s
         [Result]: \(result)
->>>>>>> Stashed changes
         """
     }
 }
@@ -250,20 +136,6 @@ extension DataResponse {
     ///
     /// - returns: A `DataResponse` whose result wraps the value returned by the given closure. If this instance's
     ///            result is a failure, returns a response wrapping the same failure.
-<<<<<<< Updated upstream
-    public func map<T>(_ transform: (Value) -> T) -> DataResponse<T> {
-        var response = DataResponse<T>(
-            request: request,
-            response: self.response,
-            data: data,
-            result: result.map(transform),
-            timeline: timeline
-        )
-
-        response._metrics = _metrics
-
-        return response
-=======
     public func map<NewSuccess>(_ transform: (Success) -> NewSuccess) -> DataResponse<NewSuccess, Failure> {
         DataResponse<NewSuccess, Failure>(request: request,
                                           response: response,
@@ -271,23 +143,15 @@ extension DataResponse {
                                           metrics: metrics,
                                           serializationDuration: serializationDuration,
                                           result: result.map(transform))
->>>>>>> Stashed changes
     }
 
     /// Evaluates the given closure when the result of this `DataResponse` is a success, passing the unwrapped result
     /// value as a parameter.
     ///
-<<<<<<< Updated upstream
-    /// Use the `flatMap` method with a closure that may throw an error. For example:
-    ///
-    ///     let possibleData: DataResponse<Data> = ...
-    ///     let possibleObject = possibleData.flatMap {
-=======
     /// Use the `tryMap` method with a closure that may throw an error. For example:
     ///
     ///     let possibleData: DataResponse<Data> = ...
     ///     let possibleObject = possibleData.tryMap {
->>>>>>> Stashed changes
     ///         try JSONSerialization.jsonObject(with: $0)
     ///     }
     ///
@@ -295,20 +159,6 @@ extension DataResponse {
     ///
     /// - returns: A success or failure `DataResponse` depending on the result of the given closure. If this instance's
     ///            result is a failure, returns the same failure.
-<<<<<<< Updated upstream
-    public func flatMap<T>(_ transform: (Value) throws -> T) -> DataResponse<T> {
-        var response = DataResponse<T>(
-            request: request,
-            response: self.response,
-            data: data,
-            result: result.flatMap(transform),
-            timeline: timeline
-        )
-
-        response._metrics = _metrics
-
-        return response
-=======
     public func tryMap<NewSuccess>(_ transform: (Success) throws -> NewSuccess) -> DataResponse<NewSuccess, Error> {
         DataResponse<NewSuccess, Error>(request: request,
                                         response: response,
@@ -316,7 +166,6 @@ extension DataResponse {
                                         metrics: metrics,
                                         serializationDuration: serializationDuration,
                                         result: result.tryMap(transform))
->>>>>>> Stashed changes
     }
 
     /// Evaluates the specified closure when the `DataResponse` is a failure, passing the unwrapped error as a parameter.
@@ -327,21 +176,6 @@ extension DataResponse {
     ///     let withMyError = possibleData.mapError { MyError.error($0) }
     ///
     /// - Parameter transform: A closure that takes the error of the instance.
-<<<<<<< Updated upstream
-    /// - Returns: A `DataResponse` instance containing the result of the transform.
-    public func mapError<E: Error>(_ transform: (Error) -> E) -> DataResponse {
-        var response = DataResponse(
-            request: request,
-            response: self.response,
-            data: data,
-            result: result.mapError(transform),
-            timeline: timeline
-        )
-
-        response._metrics = _metrics
-
-        return response
-=======
     ///
     /// - Returns: A `DataResponse` instance containing the result of the transform.
     public func mapError<NewFailure: Error>(_ transform: (Failure) -> NewFailure) -> DataResponse<Success, NewFailure> {
@@ -351,100 +185,20 @@ extension DataResponse {
                                           metrics: metrics,
                                           serializationDuration: serializationDuration,
                                           result: result.mapError(transform))
->>>>>>> Stashed changes
     }
 
     /// Evaluates the specified closure when the `DataResponse` is a failure, passing the unwrapped error as a parameter.
     ///
-<<<<<<< Updated upstream
-    /// Use the `flatMapError` function with a closure that may throw an error. For example:
-    ///
-    ///     let possibleData: DataResponse<Data> = ...
-    ///     let possibleObject = possibleData.flatMapError {
-=======
     /// Use the `tryMapError` function with a closure that may throw an error. For example:
     ///
     ///     let possibleData: DataResponse<Data> = ...
     ///     let possibleObject = possibleData.tryMapError {
->>>>>>> Stashed changes
     ///         try someFailableFunction(taking: $0)
     ///     }
     ///
     /// - Parameter transform: A throwing closure that takes the error of the instance.
     ///
     /// - Returns: A `DataResponse` instance containing the result of the transform.
-<<<<<<< Updated upstream
-    public func flatMapError<E: Error>(_ transform: (Error) throws -> E) -> DataResponse {
-        var response = DataResponse(
-            request: request,
-            response: self.response,
-            data: data,
-            result: result.flatMapError(transform),
-            timeline: timeline
-        )
-
-        response._metrics = _metrics
-
-        return response
-    }
-}
-
-// MARK: -
-
-/// Used to store all data associated with an non-serialized response of a download request.
-public struct DefaultDownloadResponse {
-    /// The URL request sent to the server.
-    public let request: URLRequest?
-
-    /// The server's response to the URL request.
-    public let response: HTTPURLResponse?
-
-    /// The temporary destination URL of the data returned from the server.
-    public let temporaryURL: URL?
-
-    /// The final destination URL of the data returned from the server if it was moved.
-    public let destinationURL: URL?
-
-    /// The resume data generated if the request was cancelled.
-    public let resumeData: Data?
-
-    /// The error encountered while executing or validating the request.
-    public let error: Error?
-
-    /// The timeline of the complete lifecycle of the request.
-    public let timeline: Timeline
-
-    var _metrics: AnyObject?
-
-    /// Creates a `DefaultDownloadResponse` instance from the specified parameters.
-    ///
-    /// - Parameters:
-    ///   - request:        The URL request sent to the server.
-    ///   - response:       The server's response to the URL request.
-    ///   - temporaryURL:   The temporary destination URL of the data returned from the server.
-    ///   - destinationURL: The final destination URL of the data returned from the server if it was moved.
-    ///   - resumeData:     The resume data generated if the request was cancelled.
-    ///   - error:          The error encountered while executing or validating the request.
-    ///   - timeline:       The timeline of the complete lifecycle of the request. `Timeline()` by default.
-    ///   - metrics:        The task metrics containing the request / response statistics. `nil` by default.
-    public init(
-        request: URLRequest?,
-        response: HTTPURLResponse?,
-        temporaryURL: URL?,
-        destinationURL: URL?,
-        resumeData: Data?,
-        error: Error?,
-        timeline: Timeline = Timeline(),
-        metrics: AnyObject? = nil)
-    {
-        self.request = request
-        self.response = response
-        self.temporaryURL = temporaryURL
-        self.destinationURL = destinationURL
-        self.resumeData = resumeData
-        self.error = error
-        self.timeline = timeline
-=======
     public func tryMapError<NewFailure: Error>(_ transform: (Failure) throws -> NewFailure) -> DataResponse<Success, Error> {
         DataResponse<Success, Error>(request: request,
                                      response: response,
@@ -452,81 +206,25 @@ public struct DefaultDownloadResponse {
                                      metrics: metrics,
                                      serializationDuration: serializationDuration,
                                      result: result.tryMapError(transform))
->>>>>>> Stashed changes
     }
 }
 
 // MARK: -
 
 /// Used to store all data associated with a serialized response of a download request.
-<<<<<<< Updated upstream
-public struct DownloadResponse<Value> {
-=======
 public struct DownloadResponse<Success, Failure: Error> {
->>>>>>> Stashed changes
     /// The URL request sent to the server.
     public let request: URLRequest?
 
     /// The server's response to the URL request.
     public let response: HTTPURLResponse?
 
-<<<<<<< Updated upstream
-    /// The temporary destination URL of the data returned from the server.
-    public let temporaryURL: URL?
-
-    /// The final destination URL of the data returned from the server if it was moved.
-    public let destinationURL: URL?
-=======
     /// The final destination URL of the data returned from the server after it is moved.
     public let fileURL: URL?
->>>>>>> Stashed changes
 
     /// The resume data generated if the request was cancelled.
     public let resumeData: Data?
 
-<<<<<<< Updated upstream
-    /// The result of response serialization.
-    public let result: Result<Value>
-
-    /// The timeline of the complete lifecycle of the request.
-    public let timeline: Timeline
-
-    /// Returns the associated value of the result if it is a success, `nil` otherwise.
-    public var value: Value? { return result.value }
-
-    /// Returns the associated error value if the result if it is a failure, `nil` otherwise.
-    public var error: Error? { return result.error }
-
-    var _metrics: AnyObject?
-
-    /// Creates a `DownloadResponse` instance with the specified parameters derived from response serialization.
-    ///
-    /// - parameter request:        The URL request sent to the server.
-    /// - parameter response:       The server's response to the URL request.
-    /// - parameter temporaryURL:   The temporary destination URL of the data returned from the server.
-    /// - parameter destinationURL: The final destination URL of the data returned from the server if it was moved.
-    /// - parameter resumeData:     The resume data generated if the request was cancelled.
-    /// - parameter result:         The result of response serialization.
-    /// - parameter timeline:       The timeline of the complete lifecycle of the `Request`. Defaults to `Timeline()`.
-    ///
-    /// - returns: The new `DownloadResponse` instance.
-    public init(
-        request: URLRequest?,
-        response: HTTPURLResponse?,
-        temporaryURL: URL?,
-        destinationURL: URL?,
-        resumeData: Data?,
-        result: Result<Value>,
-        timeline: Timeline = Timeline())
-    {
-        self.request = request
-        self.response = response
-        self.temporaryURL = temporaryURL
-        self.destinationURL = destinationURL
-        self.resumeData = resumeData
-        self.result = result
-        self.timeline = timeline
-=======
     /// The final metrics of the response.
     ///
     /// - Note: Due to `FB7624529`, collection of `URLSessionTaskMetrics` on watchOS is currently disabled.`
@@ -569,7 +267,6 @@ public struct DownloadResponse<Success, Failure: Error> {
         self.metrics = metrics
         self.serializationDuration = serializationDuration
         self.result = result
->>>>>>> Stashed changes
     }
 }
 
@@ -579,28 +276,6 @@ extension DownloadResponse: CustomStringConvertible, CustomDebugStringConvertibl
     /// The textual representation used when written to an output stream, which includes whether the result was a
     /// success or failure.
     public var description: String {
-<<<<<<< Updated upstream
-        return result.debugDescription
-    }
-
-    /// The debug textual representation used when written to an output stream, which includes the URL request, the URL
-    /// response, the temporary and destination URLs, the resume data, the response serialization result and the
-    /// timeline.
-    public var debugDescription: String {
-        let requestDescription = request.map { "\($0.httpMethod ?? "GET") \($0)"} ?? "nil"
-        let requestBody = request?.httpBody.map { String(decoding: $0, as: UTF8.self) } ?? "None"
-        let responseDescription = response.map { "\($0)" } ?? "nil"
-
-        return """
-        [Request]: \(requestDescription)
-        [Request Body]: \n\(requestBody)
-        [Response]: \(responseDescription)
-        [TemporaryURL]: \(temporaryURL?.path ?? "nil")
-        [DestinationURL]: \(destinationURL?.path ?? "nil")
-        [ResumeData]: \(resumeData?.count ?? 0) bytes
-        [Result]: \(result)
-        [Timeline]: \(timeline.debugDescription)
-=======
         "\(result)"
     }
 
@@ -623,7 +298,6 @@ extension DownloadResponse: CustomStringConvertible, CustomDebugStringConvertibl
         [Network Duration]: \(networkDuration)
         [Serialization Duration]: \(serializationDuration)s
         [Result]: \(result)
->>>>>>> Stashed changes
         """
     }
 }
@@ -643,22 +317,6 @@ extension DownloadResponse {
     ///
     /// - returns: A `DownloadResponse` whose result wraps the value returned by the given closure. If this instance's
     ///            result is a failure, returns a response wrapping the same failure.
-<<<<<<< Updated upstream
-    public func map<T>(_ transform: (Value) -> T) -> DownloadResponse<T> {
-        var response = DownloadResponse<T>(
-            request: request,
-            response: self.response,
-            temporaryURL: temporaryURL,
-            destinationURL: destinationURL,
-            resumeData: resumeData,
-            result: result.map(transform),
-            timeline: timeline
-        )
-
-        response._metrics = _metrics
-
-        return response
-=======
     public func map<NewSuccess>(_ transform: (Success) -> NewSuccess) -> DownloadResponse<NewSuccess, Failure> {
         DownloadResponse<NewSuccess, Failure>(request: request,
                                               response: response,
@@ -667,23 +325,15 @@ extension DownloadResponse {
                                               metrics: metrics,
                                               serializationDuration: serializationDuration,
                                               result: result.map(transform))
->>>>>>> Stashed changes
     }
 
     /// Evaluates the given closure when the result of this `DownloadResponse` is a success, passing the unwrapped
     /// result value as a parameter.
     ///
-<<<<<<< Updated upstream
-    /// Use the `flatMap` method with a closure that may throw an error. For example:
-    ///
-    ///     let possibleData: DownloadResponse<Data> = ...
-    ///     let possibleObject = possibleData.flatMap {
-=======
     /// Use the `tryMap` method with a closure that may throw an error. For example:
     ///
     ///     let possibleData: DownloadResponse<Data> = ...
     ///     let possibleObject = possibleData.tryMap {
->>>>>>> Stashed changes
     ///         try JSONSerialization.jsonObject(with: $0)
     ///     }
     ///
@@ -691,22 +341,6 @@ extension DownloadResponse {
     ///
     /// - returns: A success or failure `DownloadResponse` depending on the result of the given closure. If this
     /// instance's result is a failure, returns the same failure.
-<<<<<<< Updated upstream
-    public func flatMap<T>(_ transform: (Value) throws -> T) -> DownloadResponse<T> {
-        var response = DownloadResponse<T>(
-            request: request,
-            response: self.response,
-            temporaryURL: temporaryURL,
-            destinationURL: destinationURL,
-            resumeData: resumeData,
-            result: result.flatMap(transform),
-            timeline: timeline
-        )
-
-        response._metrics = _metrics
-
-        return response
-=======
     public func tryMap<NewSuccess>(_ transform: (Success) throws -> NewSuccess) -> DownloadResponse<NewSuccess, Error> {
         DownloadResponse<NewSuccess, Error>(request: request,
                                             response: response,
@@ -715,7 +349,6 @@ extension DownloadResponse {
                                             metrics: metrics,
                                             serializationDuration: serializationDuration,
                                             result: result.tryMap(transform))
->>>>>>> Stashed changes
     }
 
     /// Evaluates the specified closure when the `DownloadResponse` is a failure, passing the unwrapped error as a parameter.
@@ -726,23 +359,6 @@ extension DownloadResponse {
     ///     let withMyError = possibleData.mapError { MyError.error($0) }
     ///
     /// - Parameter transform: A closure that takes the error of the instance.
-<<<<<<< Updated upstream
-    /// - Returns: A `DownloadResponse` instance containing the result of the transform.
-    public func mapError<E: Error>(_ transform: (Error) -> E) -> DownloadResponse {
-        var response = DownloadResponse(
-            request: request,
-            response: self.response,
-            temporaryURL: temporaryURL,
-            destinationURL: destinationURL,
-            resumeData: resumeData,
-            result: result.mapError(transform),
-            timeline: timeline
-        )
-
-        response._metrics = _metrics
-
-        return response
-=======
     ///
     /// - Returns: A `DownloadResponse` instance containing the result of the transform.
     public func mapError<NewFailure: Error>(_ transform: (Failure) -> NewFailure) -> DownloadResponse<Success, NewFailure> {
@@ -753,98 +369,20 @@ extension DownloadResponse {
                                               metrics: metrics,
                                               serializationDuration: serializationDuration,
                                               result: result.mapError(transform))
->>>>>>> Stashed changes
     }
 
     /// Evaluates the specified closure when the `DownloadResponse` is a failure, passing the unwrapped error as a parameter.
     ///
-<<<<<<< Updated upstream
-    /// Use the `flatMapError` function with a closure that may throw an error. For example:
-    ///
-    ///     let possibleData: DownloadResponse<Data> = ...
-    ///     let possibleObject = possibleData.flatMapError {
-=======
     /// Use the `tryMapError` function with a closure that may throw an error. For example:
     ///
     ///     let possibleData: DownloadResponse<Data> = ...
     ///     let possibleObject = possibleData.tryMapError {
->>>>>>> Stashed changes
     ///         try someFailableFunction(taking: $0)
     ///     }
     ///
     /// - Parameter transform: A throwing closure that takes the error of the instance.
     ///
     /// - Returns: A `DownloadResponse` instance containing the result of the transform.
-<<<<<<< Updated upstream
-    public func flatMapError<E: Error>(_ transform: (Error) throws -> E) -> DownloadResponse {
-        var response = DownloadResponse(
-            request: request,
-            response: self.response,
-            temporaryURL: temporaryURL,
-            destinationURL: destinationURL,
-            resumeData: resumeData,
-            result: result.flatMapError(transform),
-            timeline: timeline
-        )
-
-        response._metrics = _metrics
-
-        return response
-    }
-}
-
-// MARK: -
-
-protocol Response {
-    /// The task metrics containing the request / response statistics.
-    var _metrics: AnyObject? { get set }
-    mutating func add(_ metrics: AnyObject?)
-}
-
-extension Response {
-    mutating func add(_ metrics: AnyObject?) {
-        #if !os(watchOS)
-            guard #available(iOS 10.0, macOS 10.12, tvOS 10.0, *) else { return }
-            guard let metrics = metrics as? URLSessionTaskMetrics else { return }
-
-            _metrics = metrics
-        #endif
-    }
-}
-
-// MARK: -
-
-@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
-extension DefaultDataResponse: Response {
-#if !os(watchOS)
-    /// The task metrics containing the request / response statistics.
-    public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
-#endif
-}
-
-@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
-extension DataResponse: Response {
-#if !os(watchOS)
-    /// The task metrics containing the request / response statistics.
-    public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
-#endif
-}
-
-@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
-extension DefaultDownloadResponse: Response {
-#if !os(watchOS)
-    /// The task metrics containing the request / response statistics.
-    public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
-#endif
-}
-
-@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
-extension DownloadResponse: Response {
-#if !os(watchOS)
-    /// The task metrics containing the request / response statistics.
-    public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
-#endif
-=======
     public func tryMapError<NewFailure: Error>(_ transform: (Failure) throws -> NewFailure) -> DownloadResponse<Success, Error> {
         DownloadResponse<Success, Error>(request: request,
                                          response: response,
@@ -912,5 +450,4 @@ extension String {
         let spaces = String(repeating: " ", count: spaceCount)
         return replacingOccurrences(of: "\n", with: "\n\(spaces)")
     }
->>>>>>> Stashed changes
 }
