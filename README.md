@@ -11,16 +11,16 @@ This Swift application employs the MVVM architecture, interacting seamlessly wit
 - Abstract
 - Published By
 
-# Requirement
+# Implementation Requirement
 {section}/{period}
 
-## Running the Demo
+## Demo App Running
 1. Register as a developer at https://developer.nytimes.com
 2. Create and register your application
 3. Obtain your unique API key
 4. Configure the SAMPLE Application with your API key
 
-## Pods for iOS
+## Dependency of Pods 
 - Alamofire: https://github.com/Alamofire/Alamofire
 - Hud: https://github.com/AtifNaveed/SwiftyProgressHud
 
