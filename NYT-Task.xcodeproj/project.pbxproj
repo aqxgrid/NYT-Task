@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		446A4165FE11858818E1614C /* Pods_NYT_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D80D8093BF92331A6C71B6 /* Pods_NYT_Task.framework */; };
+		A1AA18E02B18BCF6009BF010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E36D672B18884B003F46F0 /* Main.storyboard */; };
+		A1AA18E12B18BD04009BF010 /* NYTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E36D4F2B17C33F003F46F0 /* NYTableCell.xib */; };
+		A1AA18E22B18BD0A009BF010 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E36D652B18881A003F46F0 /* LaunchScreen.storyboard */; };
+		A1AA18E42B18BD76009BF010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1E36D0A2B1768B4003F46F0 /* Assets.xcassets */; };
+		A1AA18E52B18BDF7009BF010 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C634BD2B18927800F0BE98 /* Info.plist */; };
 		A1E36D022B1768B0003F46F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D012B1768B0003F46F0 /* AppDelegate.swift */; };
 		A1E36D042B1768B0003F46F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D032B1768B0003F46F0 /* SceneDelegate.swift */; };
-		A1E36D092B1768B0003F46F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E36D072B1768B0003F46F0 /* Main.storyboard */; };
-		A1E36D0B2B1768B4003F46F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1E36D0A2B1768B4003F46F0 /* Assets.xcassets */; };
-		A1E36D0E2B1768B4003F46F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E36D0C2B1768B4003F46F0 /* LaunchScreen.storyboard */; };
 		A1E36D192B1768B4003F46F0 /* NYT_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D182B1768B4003F46F0 /* NYT_TaskTests.swift */; };
 		A1E36D232B1768B4003F46F0 /* NYT_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D222B1768B4003F46F0 /* NYT_TaskUITests.swift */; };
 		A1E36D252B1768B4003F46F0 /* NYT_TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D242B1768B4003F46F0 /* NYT_TaskUITestsLaunchTests.swift */; };
@@ -24,7 +26,6 @@
 		A1E36D4A2B17C304003F46F0 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D482B17C304003F46F0 /* Service.swift */; };
 		A1E36D4D2B17C320003F46F0 /* MPNewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D4C2B17C320003F46F0 /* MPNewsAPI.swift */; };
 		A1E36D522B17C33F003F46F0 /* NYHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D4E2B17C33F003F46F0 /* NYHomeViewController.swift */; };
-		A1E36D532B17C33F003F46F0 /* NYTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E36D4F2B17C33F003F46F0 /* NYTableCell.xib */; };
 		A1E36D542B17C33F003F46F0 /* NYDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D502B17C33F003F46F0 /* NYDetailViewController.swift */; };
 		A1E36D552B17C33F003F46F0 /* NYTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D512B17C33F003F46F0 /* NYTableCell.swift */; };
 		A1E36D572B17C9D9003F46F0 /* NYViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E36D562B17C9D9003F46F0 /* NYViewModel.swift */; };
@@ -61,13 +62,11 @@
 		591F5507F5DCD03A5703E1F4 /* Pods-NYT-TaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYT-TaskTests.debug.xcconfig"; path = "Target Support Files/Pods-NYT-TaskTests/Pods-NYT-TaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73D80D8093BF92331A6C71B6 /* Pods_NYT_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYT_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7535D82BAA36E13887F0AB6B /* Pods_NYT_Task_NYT_TaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYT_Task_NYT_TaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1C634BD2B18927800F0BE98 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1E36CFE2B1768B0003F46F0 /* NYT-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYT-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E36D012B1768B0003F46F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1E36D032B1768B0003F46F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A1E36D082B1768B0003F46F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1E36D0A2B1768B4003F46F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A1E36D0D2B1768B4003F46F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A1E36D0F2B1768B4003F46F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1E36D142B1768B4003F46F0 /* NYT-TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NYT-TaskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E36D182B1768B4003F46F0 /* NYT_TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYT_TaskTests.swift; sourceTree = "<group>"; };
 		A1E36D1E2B1768B4003F46F0 /* NYT-TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NYT-TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +88,8 @@
 		A1E36D592B17C9FB003F46F0 /* NYModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYModel.swift; sourceTree = "<group>"; };
 		A1E36D5A2B17C9FB003F46F0 /* NewsArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsArray.swift; sourceTree = "<group>"; };
 		A1E36D5B2B17C9FB003F46F0 /* NYMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYMedia.swift; sourceTree = "<group>"; };
+		A1E36D652B18881A003F46F0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A1E36D672B18884B003F46F0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ACEB2B1AB583555A0973232F /* Pods_NYT_TaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYT_TaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B5708C9D75F91CA8A9F76C /* Pods-NYT-Task-NYT-TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYT-Task-NYT-TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-NYT-Task-NYT-TaskUITests/Pods-NYT-Task-NYT-TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +132,6 @@
 				591F5507F5DCD03A5703E1F4 /* Pods-NYT-TaskTests.debug.xcconfig */,
 				46D7ADB8ABA65DFDCF13B1C4 /* Pods-NYT-TaskTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,7 +207,7 @@
 		A1E36D392B17C1DC003F46F0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A1E36D072B1768B0003F46F0 /* Main.storyboard */,
+				A1E36D672B18884B003F46F0 /* Main.storyboard */,
 				A1E36D502B17C33F003F46F0 /* NYDetailViewController.swift */,
 				A1E36D4E2B17C33F003F46F0 /* NYHomeViewController.swift */,
 				A1E36D512B17C33F003F46F0 /* NYTableCell.swift */,
@@ -232,9 +232,9 @@
 			children = (
 				A1E36D012B1768B0003F46F0 /* AppDelegate.swift */,
 				A1E36D032B1768B0003F46F0 /* SceneDelegate.swift */,
-				A1E36D0C2B1768B4003F46F0 /* LaunchScreen.storyboard */,
+				A1E36D652B18881A003F46F0 /* LaunchScreen.storyboard */,
+				A1C634BD2B18927800F0BE98 /* Info.plist */,
 				A1E36D0A2B1768B4003F46F0 /* Assets.xcassets */,
-				A1E36D0F2B1768B4003F46F0 /* Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -394,10 +394,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1E36D0E2B1768B4003F46F0 /* LaunchScreen.storyboard in Resources */,
-				A1E36D0B2B1768B4003F46F0 /* Assets.xcassets in Resources */,
-				A1E36D092B1768B0003F46F0 /* Main.storyboard in Resources */,
-				A1E36D532B17C33F003F46F0 /* NYTableCell.xib in Resources */,
+				A1AA18E22B18BD0A009BF010 /* LaunchScreen.storyboard in Resources */,
+				A1AA18E02B18BCF6009BF010 /* Main.storyboard in Resources */,
+				A1AA18E12B18BD04009BF010 /* NYTableCell.xib in Resources */,
+				A1AA18E52B18BDF7009BF010 /* Info.plist in Resources */,
+				A1AA18E42B18BD76009BF010 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,40 +419,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0B9CE2BB00E72A33C89BDA07 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NYT-Task-NYT-TaskUITests/Pods-NYT-Task-NYT-TaskUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NYT-Task-NYT-TaskUITests/Pods-NYT-Task-NYT-TaskUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYT-Task-NYT-TaskUITests/Pods-NYT-Task-NYT-TaskUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3667F4D15C8E23086150058D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NYT-Task/Pods-NYT-Task-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NYT-Task/Pods-NYT-Task-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYT-Task/Pods-NYT-Task-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		37ED23B7516C79AD5D18EA57 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -559,7 +526,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1E36D062B1768B0003F46F0 /* ViewController.swift in Sources */,
 				A1E36D022B1768B0003F46F0 /* AppDelegate.swift in Sources */,
 				A1E36D042B1768B0003F46F0 /* SceneDelegate.swift in Sources */,
 				A1E36D542B17C33F003F46F0 /* NYDetailViewController.swift in Sources */,
@@ -613,25 +579,6 @@
 			targetProxy = A1E36D1F2B1768B4003F46F0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		A1E36D072B1768B0003F46F0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A1E36D082B1768B0003F46F0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A1E36D0C2B1768B4003F46F0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A1E36D0D2B1768B4003F46F0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A1E36D262B1768B4003F46F0 /* Debug */ = {
@@ -758,12 +705,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 774M676ZQ9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "NYT-Task/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "NYT-Task";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -787,12 +734,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 774M676ZQ9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "NYT-Task/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "NYT-Task";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
