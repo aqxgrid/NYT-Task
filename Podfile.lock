@@ -1,4 +1,5 @@
 PODS:
+<<<<<<< Updated upstream
   - Alamofire (4.9.1)
   - Kingfisher (5.15.8):
     - Kingfisher/Core (= 5.15.8)
@@ -15,10 +16,19 @@ DEPENDENCIES:
   - Kingfisher (~> 5.0)
   - Moya (~> 12.0)
   - SVProgressHUD (~> 2.2.5)
+=======
+  - Alamofire (5.7.1)
+  - SwiftyProgressHud (1.0.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - SwiftyProgressHud
+>>>>>>> Stashed changes
 
 SPEC REPOS:
   trunk:
     - Alamofire
+<<<<<<< Updated upstream
     - Kingfisher
     - Moya
     - Result
@@ -32,5 +42,14 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
 PODFILE CHECKSUM: fa7e22d6b997bdc5f88627a608304d4db9fe98a0
+=======
+    - SwiftyProgressHud
+
+SPEC CHECKSUMS:
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  SwiftyProgressHud: 6ea32c04775b3057ed5c4253b9a4f7f07994e9a9
+
+PODFILE CHECKSUM: abcb6add6e495bfab3f52dca1e56a2fc1b619d2a
+>>>>>>> Stashed changes
 
 COCOAPODS: 1.11.3

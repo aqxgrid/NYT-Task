@@ -11,6 +11,7 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+<<<<<<< Updated upstream
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,12 +20,16 @@
 			<integer>1</integer>
 		</dict>
 		<key>Moya.xcscheme</key>
+=======
+		<key>Pods-NYT-Task-NYT-TaskUITests.xcscheme</key>
+>>>>>>> Stashed changes
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+<<<<<<< Updated upstream
 		<key>Pods-NYT-Task-NYT-TaskUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,25 +37,38 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+=======
+>>>>>>> Stashed changes
 		<key>Pods-NYT-Task.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
+<<<<<<< Updated upstream
 			<integer>3</integer>
+=======
+			<integer>1</integer>
+>>>>>>> Stashed changes
 		</dict>
 		<key>Pods-NYT-TaskTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
+<<<<<<< Updated upstream
 			<integer>5</integer>
 		</dict>
 		<key>Result.xcscheme</key>
+=======
+			<integer>3</integer>
+		</dict>
+		<key>SwiftyProgressHud.xcscheme</key>
+>>>>>>> Stashed changes
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
+<<<<<<< Updated upstream
 			<integer>6</integer>
 		</dict>
 		<key>SVProgressHUD.xcscheme</key>
@@ -59,6 +77,9 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>7</integer>
+=======
+			<integer>4</integer>
+>>>>>>> Stashed changes
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

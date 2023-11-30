@@ -1,7 +1,11 @@
 //
 //  Alamofire.swift
 //
+<<<<<<< Updated upstream
 //  Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
+=======
+//  Copyright (c) 2014-2021 Alamofire Software Foundation (http://alamofire.org/)
+>>>>>>> Stashed changes
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -22,6 +26,7 @@
 //  THE SOFTWARE.
 //
 
+<<<<<<< Updated upstream
 import Foundation
 
 /// Types adopting the `URLConvertible` protocol can be used to construct URLs, which are then used to construct
@@ -463,3 +468,21 @@ public func stream(with netService: NetService) -> StreamRequest {
 }
 
 #endif
+=======
+import Dispatch
+import Foundation
+#if canImport(FoundationNetworking)
+@_exported import FoundationNetworking
+#endif
+
+// Enforce minimum Swift version for all platforms and build systems.
+#if swift(<5.5)
+#error("Alamofire doesn't support Swift versions below 5.5.")
+#endif
+
+/// Reference to `Session.default` for quick bootstrapping and examples.
+public let AF = Session.default
+
+/// Current Alamofire version. Necessary since SPM doesn't use dynamic libraries. Plus this will be more accurate.
+let version = "5.7.1"
+>>>>>>> Stashed changes

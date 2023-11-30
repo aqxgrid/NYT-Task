@@ -1,6 +1,10 @@
 ${PODS_ROOT}/Target Support Files/Pods-NYT-Task/Pods-NYT-Task-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+<<<<<<< Updated upstream
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${BUILT_PRODUCTS_DIR}/Result/Result.framework
 ${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework
+=======
+${BUILT_PRODUCTS_DIR}/SwiftyProgressHud/SwiftyProgressHud.framework
+>>>>>>> Stashed changes

@@ -1,7 +1,11 @@
 //
 //  MultipartFormData.swift
 //
+<<<<<<< Updated upstream
 //  Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
+=======
+//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
+>>>>>>> Stashed changes
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -43,6 +47,7 @@ import CoreServices
 /// - https://www.ietf.org/rfc/rfc2045.txt
 /// - https://www.w3.org/TR/html401/interact/forms.html#h-17.13
 open class MultipartFormData {
+<<<<<<< Updated upstream
 
     // MARK: - Helper Types
 
@@ -51,12 +56,28 @@ open class MultipartFormData {
     }
 
     struct BoundaryGenerator {
+=======
+    // MARK: - Helper Types
+
+    enum EncodingCharacters {
+        static let crlf = "\r\n"
+    }
+
+    enum BoundaryGenerator {
+>>>>>>> Stashed changes
         enum BoundaryType {
             case initial, encapsulated, final
         }
 
         static func randomBoundary() -> String {
+<<<<<<< Updated upstream
             return String(format: "alamofire.boundary.%08x%08x", arc4random(), arc4random())
+=======
+            let first = UInt32.random(in: UInt32.min...UInt32.max)
+            let second = UInt32.random(in: UInt32.min...UInt32.max)
+
+            return String(format: "alamofire.boundary.%08x%08x", first, second)
+>>>>>>> Stashed changes
         }
 
         static func boundaryData(forBoundaryType boundaryType: BoundaryType, boundary: String) -> Data {
@@ -71,7 +92,11 @@ open class MultipartFormData {
                 boundaryText = "\(EncodingCharacters.crlf)--\(boundary)--\(EncodingCharacters.crlf)"
             }
 
+<<<<<<< Updated upstream
             return boundaryText.data(using: String.Encoding.utf8, allowLossyConversion: false)!
+=======
+            return Data(boundaryText.utf8)
+>>>>>>> Stashed changes
         }
     }
 
@@ -91,14 +116,29 @@ open class MultipartFormData {
 
     // MARK: - Properties
 
+<<<<<<< Updated upstream
+=======
+    /// Default memory threshold used when encoding `MultipartFormData`, in bytes.
+    public static let encodingMemoryThreshold: UInt64 = 10_000_000
+
+>>>>>>> Stashed changes
     /// The `Content-Type` header value containing the boundary used to generate the `multipart/form-data`.
     open lazy var contentType: String = "multipart/form-data; boundary=\(self.boundary)"
 
     /// The content length of all body parts used to generate the `multipart/form-data` not including the boundaries.
+<<<<<<< Updated upstream
     public var contentLength: UInt64 { return bodyParts.reduce(0) { $0 + $1.bodyContentLength } }
 
     /// The boundary used to separate the body parts in the encoded form data.
     public var boundary: String
+=======
+    public var contentLength: UInt64 { bodyParts.reduce(0) { $0 + $1.bodyContentLength } }
+
+    /// The boundary used to separate the body parts in the encoded form data.
+    public let boundary: String
+
+    let fileManager: FileManager
+>>>>>>> Stashed changes
 
     private var bodyParts: [BodyPart]
     private var bodyPartError: AFError?
@@ -106,6 +146,7 @@ open class MultipartFormData {
 
     // MARK: - Lifecycle
 
+<<<<<<< Updated upstream
     /// Creates a multipart form data object.
     ///
     /// - returns: The multipart form data object.
@@ -120,10 +161,29 @@ open class MultipartFormData {
         ///
 
         self.streamBufferSize = 1024
+=======
+    /// Creates an instance.
+    ///
+    /// - Parameters:
+    ///   - fileManager: `FileManager` to use for file operations, if needed.
+    ///   - boundary: Boundary `String` used to separate body parts.
+    public init(fileManager: FileManager = .default, boundary: String? = nil) {
+        self.fileManager = fileManager
+        self.boundary = boundary ?? BoundaryGenerator.randomBoundary()
+        bodyParts = []
+
+        //
+        // The optimal read/write buffer size in bytes for input and output streams is 1024 (1KB). For more
+        // information, please refer to the following article:
+        //   - https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Streams/Articles/ReadingInputStreams.html
+        //
+        streamBufferSize = 1024
+>>>>>>> Stashed changes
     }
 
     // MARK: - Body Parts
 
+<<<<<<< Updated upstream
     /// Creates a body part from the data and appends it to the multipart form data object.
     ///
     /// The body part data will be encoded using the following format:
@@ -163,6 +223,9 @@ open class MultipartFormData {
     }
 
     /// Creates a body part from the data and appends it to the multipart form data object.
+=======
+    /// Creates a body part from the data and appends it to the instance.
+>>>>>>> Stashed changes
     ///
     /// The body part data will be encoded using the following format:
     ///
@@ -171,11 +234,20 @@ open class MultipartFormData {
     /// - Encoded file data
     /// - Multipart form boundary
     ///
+<<<<<<< Updated upstream
     /// - parameter data:     The data to encode into the multipart form data.
     /// - parameter name:     The name to associate with the data in the `Content-Disposition` HTTP header.
     /// - parameter fileName: The filename to associate with the data in the `Content-Disposition` HTTP header.
     /// - parameter mimeType: The MIME type to associate with the data in the `Content-Type` HTTP header.
     public func append(_ data: Data, withName name: String, fileName: String, mimeType: String) {
+=======
+    /// - Parameters:
+    ///   - data:     `Data` to encoding into the instance.
+    ///   - name:     Name to associate with the `Data` in the `Content-Disposition` HTTP header.
+    ///   - fileName: Filename to associate with the `Data` in the `Content-Disposition` HTTP header.
+    ///   - mimeType: MIME type to associate with the data in the `Content-Type` HTTP header.
+    public func append(_ data: Data, withName name: String, fileName: String? = nil, mimeType: String? = nil) {
+>>>>>>> Stashed changes
         let headers = contentHeaders(withName: name, fileName: fileName, mimeType: mimeType)
         let stream = InputStream(data: data)
         let length = UInt64(data.count)
@@ -183,7 +255,11 @@ open class MultipartFormData {
         append(stream, withLength: length, headers: headers)
     }
 
+<<<<<<< Updated upstream
     /// Creates a body part from the file and appends it to the multipart form data object.
+=======
+    /// Creates a body part from the file and appends it to the instance.
+>>>>>>> Stashed changes
     ///
     /// The body part data will be encoded using the following format:
     ///
@@ -196,8 +272,14 @@ open class MultipartFormData {
     /// `fileURL`. The `Content-Type` HTTP header MIME type is generated by mapping the `fileURL` extension to the
     /// system associated MIME type.
     ///
+<<<<<<< Updated upstream
     /// - parameter fileURL: The URL of the file whose content will be encoded into the multipart form data.
     /// - parameter name:    The name to associate with the file content in the `Content-Disposition` HTTP header.
+=======
+    /// - Parameters:
+    ///   - fileURL: `URL` of the file whose content will be encoded into the instance.
+    ///   - name:    Name to associate with the file content in the `Content-Disposition` HTTP header.
+>>>>>>> Stashed changes
     public func append(_ fileURL: URL, withName name: String) {
         let fileName = fileURL.lastPathComponent
         let pathExtension = fileURL.pathExtension
@@ -210,7 +292,11 @@ open class MultipartFormData {
         }
     }
 
+<<<<<<< Updated upstream
     /// Creates a body part from the file and appends it to the multipart form data object.
+=======
+    /// Creates a body part from the file and appends it to the instance.
+>>>>>>> Stashed changes
     ///
     /// The body part data will be encoded using the following format:
     ///
@@ -219,10 +305,18 @@ open class MultipartFormData {
     /// - Encoded file data
     /// - Multipart form boundary
     ///
+<<<<<<< Updated upstream
     /// - parameter fileURL:  The URL of the file whose content will be encoded into the multipart form data.
     /// - parameter name:     The name to associate with the file content in the `Content-Disposition` HTTP header.
     /// - parameter fileName: The filename to associate with the file content in the `Content-Disposition` HTTP header.
     /// - parameter mimeType: The MIME type to associate with the file content in the `Content-Type` HTTP header.
+=======
+    /// - Parameters:
+    ///   - fileURL:  `URL` of the file whose content will be encoded into the instance.
+    ///   - name:     Name to associate with the file content in the `Content-Disposition` HTTP header.
+    ///   - fileName: Filename to associate with the file content in the `Content-Disposition` HTTP header.
+    ///   - mimeType: MIME type to associate with the file content in the `Content-Type` HTTP header.
+>>>>>>> Stashed changes
     public func append(_ fileURL: URL, withName name: String, fileName: String, mimeType: String) {
         let headers = contentHeaders(withName: name, fileName: fileName, mimeType: mimeType)
 
@@ -239,6 +333,10 @@ open class MultipartFormData {
         //              Check 2 - is file URL reachable?
         //============================================================
 
+<<<<<<< Updated upstream
+=======
+        #if !(os(Linux) || os(Windows))
+>>>>>>> Stashed changes
         do {
             let isReachable = try fileURL.checkPromisedItemIsReachable()
             guard isReachable else {
@@ -249,6 +347,10 @@ open class MultipartFormData {
             setBodyPartError(withReason: .bodyPartFileNotReachableWithError(atURL: fileURL, error: error))
             return
         }
+<<<<<<< Updated upstream
+=======
+        #endif
+>>>>>>> Stashed changes
 
         //============================================================
         //            Check 3 - is file URL a directory?
@@ -257,7 +359,11 @@ open class MultipartFormData {
         var isDirectory: ObjCBool = false
         let path = fileURL.path
 
+<<<<<<< Updated upstream
         guard FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory) && !isDirectory.boolValue else {
+=======
+        guard fileManager.fileExists(atPath: path, isDirectory: &isDirectory) && !isDirectory.boolValue else {
+>>>>>>> Stashed changes
             setBodyPartError(withReason: .bodyPartFileIsDirectory(at: fileURL))
             return
         }
@@ -269,14 +375,22 @@ open class MultipartFormData {
         let bodyContentLength: UInt64
 
         do {
+<<<<<<< Updated upstream
             guard let fileSize = try FileManager.default.attributesOfItem(atPath: path)[.size] as? NSNumber else {
+=======
+            guard let fileSize = try fileManager.attributesOfItem(atPath: path)[.size] as? NSNumber else {
+>>>>>>> Stashed changes
                 setBodyPartError(withReason: .bodyPartFileSizeNotAvailable(at: fileURL))
                 return
             }
 
             bodyContentLength = fileSize.uint64Value
+<<<<<<< Updated upstream
         }
         catch {
+=======
+        } catch {
+>>>>>>> Stashed changes
             setBodyPartError(withReason: .bodyPartFileSizeQueryFailedWithError(forURL: fileURL, error: error))
             return
         }
@@ -293,7 +407,11 @@ open class MultipartFormData {
         append(stream, withLength: bodyContentLength, headers: headers)
     }
 
+<<<<<<< Updated upstream
     /// Creates a body part from the stream and appends it to the multipart form data object.
+=======
+    /// Creates a body part from the stream and appends it to the instance.
+>>>>>>> Stashed changes
     ///
     /// The body part data will be encoded using the following format:
     ///
@@ -302,6 +420,7 @@ open class MultipartFormData {
     /// - Encoded stream data
     /// - Multipart form boundary
     ///
+<<<<<<< Updated upstream
     /// - parameter stream:   The input stream to encode in the multipart form data.
     /// - parameter length:   The content length of the stream.
     /// - parameter name:     The name to associate with the stream content in the `Content-Disposition` HTTP header.
@@ -314,11 +433,28 @@ open class MultipartFormData {
         fileName: String,
         mimeType: String)
     {
+=======
+    /// - Parameters:
+    ///   - stream:   `InputStream` to encode into the instance.
+    ///   - length:   Length, in bytes, of the stream.
+    ///   - name:     Name to associate with the stream content in the `Content-Disposition` HTTP header.
+    ///   - fileName: Filename to associate with the stream content in the `Content-Disposition` HTTP header.
+    ///   - mimeType: MIME type to associate with the stream content in the `Content-Type` HTTP header.
+    public func append(_ stream: InputStream,
+                       withLength length: UInt64,
+                       name: String,
+                       fileName: String,
+                       mimeType: String) {
+>>>>>>> Stashed changes
         let headers = contentHeaders(withName: name, fileName: fileName, mimeType: mimeType)
         append(stream, withLength: length, headers: headers)
     }
 
+<<<<<<< Updated upstream
     /// Creates a body part with the headers, stream and length and appends it to the multipart form data object.
+=======
+    /// Creates a body part with the stream, length, and headers and appends it to the instance.
+>>>>>>> Stashed changes
     ///
     /// The body part data will be encoded using the following format:
     ///
@@ -326,9 +462,16 @@ open class MultipartFormData {
     /// - Encoded stream data
     /// - Multipart form boundary
     ///
+<<<<<<< Updated upstream
     /// - parameter stream:  The input stream to encode in the multipart form data.
     /// - parameter length:  The content length of the stream.
     /// - parameter headers: The HTTP headers for the body part.
+=======
+    /// - Parameters:
+    ///   - stream:  `InputStream` to encode into the instance.
+    ///   - length:  Length, in bytes, of the stream.
+    ///   - headers: `HTTPHeaders` for the body part.
+>>>>>>> Stashed changes
     public func append(_ stream: InputStream, withLength length: UInt64, headers: HTTPHeaders) {
         let bodyPart = BodyPart(headers: headers, bodyStream: stream, bodyContentLength: length)
         bodyParts.append(bodyPart)
@@ -336,6 +479,7 @@ open class MultipartFormData {
 
     // MARK: - Data Encoding
 
+<<<<<<< Updated upstream
     /// Encodes all the appended body parts into a single `Data` value.
     ///
     /// It is important to note that this method will load all the appended body parts into memory all at the same
@@ -345,6 +489,16 @@ open class MultipartFormData {
     /// - throws: An `AFError` if encoding encounters an error.
     ///
     /// - returns: The encoded `Data` if encoding is successful.
+=======
+    /// Encodes all appended body parts into a single `Data` value.
+    ///
+    /// - Note: This method will load all the appended body parts into memory all at the same time. This method should
+    ///         only be used when the encoded data will have a small memory footprint. For large data cases, please use
+    ///         the `writeEncodedData(to:))` method.
+    ///
+    /// - Returns: The encoded `Data`, if encoding is successful.
+    /// - Throws:  An `AFError` if encoding encounters an error.
+>>>>>>> Stashed changes
     public func encode() throws -> Data {
         if let bodyPartError = bodyPartError {
             throw bodyPartError
@@ -363,20 +517,33 @@ open class MultipartFormData {
         return encoded
     }
 
+<<<<<<< Updated upstream
     /// Writes the appended body parts into the given file URL.
+=======
+    /// Writes all appended body parts to the given file `URL`.
+>>>>>>> Stashed changes
     ///
     /// This process is facilitated by reading and writing with input and output streams, respectively. Thus,
     /// this approach is very memory efficient and should be used for large body part data.
     ///
+<<<<<<< Updated upstream
     /// - parameter fileURL: The file URL to write the multipart form data into.
     ///
     /// - throws: An `AFError` if encoding encounters an error.
+=======
+    /// - Parameter fileURL: File `URL` to which to write the form data.
+    /// - Throws:            An `AFError` if encoding encounters an error.
+>>>>>>> Stashed changes
     public func writeEncodedData(to fileURL: URL) throws {
         if let bodyPartError = bodyPartError {
             throw bodyPartError
         }
 
+<<<<<<< Updated upstream
         if FileManager.default.fileExists(atPath: fileURL.path) {
+=======
+        if fileManager.fileExists(atPath: fileURL.path) {
+>>>>>>> Stashed changes
             throw AFError.multipartEncodingFailed(reason: .outputStreamFileAlreadyExists(at: fileURL))
         } else if !fileURL.isFileURL {
             throw AFError.multipartEncodingFailed(reason: .outputStreamURLInvalid(url: fileURL))
@@ -389,10 +556,17 @@ open class MultipartFormData {
         outputStream.open()
         defer { outputStream.close() }
 
+<<<<<<< Updated upstream
         self.bodyParts.first?.hasInitialBoundary = true
         self.bodyParts.last?.hasFinalBoundary = true
 
         for bodyPart in self.bodyParts {
+=======
+        bodyParts.first?.hasInitialBoundary = true
+        bodyParts.last?.hasFinalBoundary = true
+
+        for bodyPart in bodyParts {
+>>>>>>> Stashed changes
             try write(bodyPart, to: outputStream)
         }
     }
@@ -419,6 +593,7 @@ open class MultipartFormData {
     }
 
     private func encodeHeaders(for bodyPart: BodyPart) -> Data {
+<<<<<<< Updated upstream
         var headerText = ""
 
         for (key, value) in bodyPart.headers {
@@ -427,6 +602,13 @@ open class MultipartFormData {
         headerText += EncodingCharacters.crlf
 
         return headerText.data(using: String.Encoding.utf8, allowLossyConversion: false)!
+=======
+        let headerText = bodyPart.headers.map { "\($0.name): \($0.value)\(EncodingCharacters.crlf)" }
+            .joined()
+            + EncodingCharacters.crlf
+
+        return Data(headerText.utf8)
+>>>>>>> Stashed changes
     }
 
     private func encodeBodyStream(for bodyPart: BodyPart) throws -> Data {
@@ -451,6 +633,15 @@ open class MultipartFormData {
             }
         }
 
+<<<<<<< Updated upstream
+=======
+        guard UInt64(encoded.count) == bodyPart.bodyContentLength else {
+            let error = AFError.UnexpectedInputStreamLength(bytesExpected: bodyPart.bodyContentLength,
+                                                            bytesRead: UInt64(encoded.count))
+            throw AFError.multipartEncodingFailed(reason: .inputStreamReadFailed(error: error))
+        }
+
+>>>>>>> Stashed changes
         return encoded
     }
 
@@ -532,6 +723,7 @@ open class MultipartFormData {
         }
     }
 
+<<<<<<< Updated upstream
     // MARK: - Private - Mime Type
 
     private func mimeType(forPathExtension pathExtension: String) -> String {
@@ -553,6 +745,16 @@ open class MultipartFormData {
 
         var headers = ["Content-Disposition": disposition]
         if let mimeType = mimeType { headers["Content-Type"] = mimeType }
+=======
+    // MARK: - Private - Content Headers
+
+    private func contentHeaders(withName name: String, fileName: String? = nil, mimeType: String? = nil) -> HTTPHeaders {
+        var disposition = "form-data; name=\"\(name)\""
+        if let fileName = fileName { disposition += "; filename=\"\(fileName)\"" }
+
+        var headers: HTTPHeaders = [.contentDisposition(disposition)]
+        if let mimeType = mimeType { headers.add(.contentType(mimeType)) }
+>>>>>>> Stashed changes
 
         return headers
     }
@@ -560,6 +762,7 @@ open class MultipartFormData {
     // MARK: - Private - Boundary Encoding
 
     private func initialBoundaryData() -> Data {
+<<<<<<< Updated upstream
         return BoundaryGenerator.boundaryData(forBoundaryType: .initial, boundary: boundary)
     }
 
@@ -569,6 +772,17 @@ open class MultipartFormData {
 
     private func finalBoundaryData() -> Data {
         return BoundaryGenerator.boundaryData(forBoundaryType: .final, boundary: boundary)
+=======
+        BoundaryGenerator.boundaryData(forBoundaryType: .initial, boundary: boundary)
+    }
+
+    private func encapsulatedBoundaryData() -> Data {
+        BoundaryGenerator.boundaryData(forBoundaryType: .encapsulated, boundary: boundary)
+    }
+
+    private func finalBoundaryData() -> Data {
+        BoundaryGenerator.boundaryData(forBoundaryType: .final, boundary: boundary)
+>>>>>>> Stashed changes
     }
 
     // MARK: - Private - Errors
@@ -578,3 +792,47 @@ open class MultipartFormData {
         bodyPartError = AFError.multipartEncodingFailed(reason: reason)
     }
 }
+<<<<<<< Updated upstream
+=======
+
+#if canImport(UniformTypeIdentifiers)
+import UniformTypeIdentifiers
+
+extension MultipartFormData {
+    // MARK: - Private - Mime Type
+
+    private func mimeType(forPathExtension pathExtension: String) -> String {
+        if #available(iOS 14, macOS 11, tvOS 14, watchOS 7, *) {
+            return UTType(filenameExtension: pathExtension)?.preferredMIMEType ?? "application/octet-stream"
+        } else {
+            if
+                let id = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, pathExtension as CFString, nil)?.takeRetainedValue(),
+                let contentType = UTTypeCopyPreferredTagWithClass(id, kUTTagClassMIMEType)?.takeRetainedValue() {
+                return contentType as String
+            }
+
+            return "application/octet-stream"
+        }
+    }
+}
+
+#else
+
+extension MultipartFormData {
+    // MARK: - Private - Mime Type
+
+    private func mimeType(forPathExtension pathExtension: String) -> String {
+        #if !(os(Linux) || os(Windows))
+        if
+            let id = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, pathExtension as CFString, nil)?.takeRetainedValue(),
+            let contentType = UTTypeCopyPreferredTagWithClass(id, kUTTagClassMIMEType)?.takeRetainedValue() {
+            return contentType as String
+        }
+        #endif
+
+        return "application/octet-stream"
+    }
+}
+
+#endif
+>>>>>>> Stashed changes
