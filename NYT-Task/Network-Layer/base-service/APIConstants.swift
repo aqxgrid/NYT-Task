@@ -9,6 +9,7 @@ import UIKit
 import Foundation
 
 struct APIConstants {
+
     static let unkown_title  = "Breaking News"
     static let unkown_author = "By Unkown"
     static let unkown_abst   = "Empty"
